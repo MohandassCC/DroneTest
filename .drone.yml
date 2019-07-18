@@ -1,8 +1,17 @@
+kind: pipeline
+name: default
 
-pipeline:
-  build:
-    image: node:latest
-    commands: npm install
-  test:
-    image: node:latest
-    commands: npm run test
+clone:
+  depth: 50
+
+steps:
+- name: fetch
+  image: docker:git
+  commands:
+  - git fetch --tags
+
+- name: build
+  image: golang
+  commands:
+  - go build
+  - go test
