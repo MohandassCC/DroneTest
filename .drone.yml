@@ -1,0 +1,10 @@
+[github]
+client="bc569ec347cd9bf7aa63"
+secret="f815ff827bcd667e08f6c47ea2557aa73e065120"
+pipeline:
+  build:
+    image: node:latest
+    commands: npm install
+  test:
+    image: node:latest
+    commands: npm run test
