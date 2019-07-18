@@ -1,3 +1,4 @@
+---
 kind: pipeline
 name: default
 
@@ -15,3 +16,4 @@ steps:
   commands:
   - go build
   - go test
+  ...
