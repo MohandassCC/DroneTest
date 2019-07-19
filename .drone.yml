@@ -2,8 +2,7 @@
 kind: pipeline
 name: default
 workspace:
-  base: /go
-  path: Dockerfile
+    path: Dockerfile
 steps:
   - name: test
     image: golang
