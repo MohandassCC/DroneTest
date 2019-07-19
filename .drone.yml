@@ -5,7 +5,11 @@ name: default
 clone:
   depth: 50
 
-steps:
+workspace:
+  base: /go
+  path: /go/Dockerfile
+  
+steps: 
 - name: build
   image: golang
   commands:
