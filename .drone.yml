@@ -2,7 +2,7 @@
 kind: pipeline
 name: default
 workspace:
-    base: /
+    base: /go
     path: Dockerfile
 steps:
   - name: test
