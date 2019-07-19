@@ -1,25 +1,13 @@
 ---
 kind: pipeline
 name: default
-workspace:
-    base: /go
-    path: Dockerfile
+
+clone:
+  depth: 50
+
 steps:
-  - name: test
-    image: golang
-    commands:
-      - go get
-      - go test
-  - name: build
-    image: golang
-    commands:
-      - go get
-      - go build -o output
-      - chmod +x output
-  - name: run
-    image: golang
-    commands:
-      - go get
-      - go build -o output
-      - chmod +x output
-      - ./output
+- name: build
+  image: golang
+  commands:
+  - go build
+  - go test
