@@ -7,7 +7,7 @@ clone:
 
 workspace:
   base: /go
- 
+  path:/test/Dockerfile 
 steps: 
 - name: build
   image: golang
