@@ -6,6 +6,6 @@ steps:
     image: docker:latest
     volumes:
       - name: docker_sock
-        path: /
+        path: /go/test/
     commands:
       - docker build --no-cache -t cookiecutter-python-tests -f Dockerfile.tests .
