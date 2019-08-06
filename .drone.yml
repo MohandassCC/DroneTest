@@ -1,0 +1,26 @@
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: node:alpine
+  commands:
+  - npm install
+  - npm test
+
+- name: publish
+  image: plugins/docker
+  when:
+    event:
+    - tag
+  settings:
+    repo: jasonraimondi/jasonraimondi.com
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags = [
+     - latest
+     - ${DRONE_TAG}
+    auto_tag: true
+    force_tag: true
